@@ -39,14 +39,6 @@ Route::get('/statistics', [StatisticsController::class, 'index']);
 Route::get('/categoryaccessories/{categoryId}', [StatisticsController::class, 'categoryAccessories']);
 
 /****** Admin ******/
-// Route::post('/register', [AdminController::class, 'store'])->midleware('guest');
-//  Route::post('/login', [AdminController::class,'login'])->midleware('guest');
-
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('/profileadmin', [AdminController::class, 'show']);
-//     Route::put('/update', [AdminController::class,'update']);
-//     Route::post('/register', [AdminController::class, 'store']);
-// });;
 
 // Routes accessibles uniquement aux invités
 Route::middleware(['guest'])->group(function () {

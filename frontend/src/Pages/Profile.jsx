@@ -3,7 +3,7 @@ import axios from 'axios';
 import back from '../Images/back.jpg';
 
 const Profile = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
   const [data, setData] = useState({
     name: localStorage.getItem('adminName') || '',
     email: localStorage.getItem('adminEmail') || '',
@@ -24,10 +24,10 @@ const Profile = () => {
     }
   }, [selectedImage]);
 
-  const handleTogglePassword = () => {
-    setData({ ...data, password: '' }); // Reset password on toggle (optional)
-    setShowPassword(!showPassword); // Assuming you have a state for showPassword
-  };
+  // const handleTogglePassword = () => {
+  //   setData({ ...data, password: '' }); // Reset password on toggle (optional)
+  //   setShowPassword(!showPassword); // Assuming you have a state for showPassword
+  // };
 
   const handleChange = (e) => {
     const { name, value } = e.target;

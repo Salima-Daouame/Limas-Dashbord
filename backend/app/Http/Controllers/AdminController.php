@@ -48,46 +48,6 @@ class AdminController extends Controller
     }
 
 
-//     public function update(Request $request, $id)
-// {
-//     $validator = Validator::make($request->all(), [
-//         'name' => 'required|string|max:255',
-//         'email' => 'required|string|email|unique:admins,email,' . $id,
-//         'password' => 'nullable|string|min:8',
-//     ]);
-
-//     if ($validator->fails()) {
-//         return response()->json($validator->errors(), 422);
-//     }
-
-//     $admin = Admin::find($id);
-
-//     if (!$admin) {
-//         return response()->json(['error' => 'Admin not found'], 404);
-//     }
-
-//     $data = $request->only('name', 'email');
-
-//     if ($request->hasFile('image')) {
-//         $imagePath = $request->file('image')->store('profile_images');
-//         $data['image'] = $imagePath;
-
-//         if ($admin->image) {
-//             Storage::delete($admin->image);
-//         }
-//     }
-
-//     if ($request->filled('password')) {
-//         $data['password'] = bcrypt($request->password);
-//     }
-
-//     $admin->update($data);
-
-//     session()->put('adminName', $admin->name);
-//     session()->put('adminEmail', $admin->email);
-
-//     return response()->json($admin, 200);
-// }
 public function update(AdminRequest $request, Admin $admin, $id)
 {
     $admin = Admin::find($id);
@@ -107,8 +67,6 @@ public function update(AdminRequest $request, Admin $admin, $id)
         'data' => $admin,
     ]);
 }
-
-
 
     public function login(Request $req)
 {
