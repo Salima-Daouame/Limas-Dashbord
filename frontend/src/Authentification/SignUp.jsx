@@ -46,7 +46,7 @@ const SignUp = () => {
     }
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/register', data);
+      const response = await axios.post('http://127.0.0.1:8081/api/register', data);
       alert(response.data.message);
       // Store admin data in local storage
     localStorage.setItem('admin', JSON.stringify(formData));

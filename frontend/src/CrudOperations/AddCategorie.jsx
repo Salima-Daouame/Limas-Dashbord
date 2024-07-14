@@ -33,7 +33,7 @@ function AddCategorie({ onClose }) {
         formData.append('image', userField.image);
 
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/addcatecategorie", formData, {
+            const response = await axios.post("http://127.0.0.1:8081/api/addcatecategorie", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

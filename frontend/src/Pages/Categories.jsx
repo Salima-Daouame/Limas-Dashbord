@@ -24,7 +24,7 @@ function Categories() {
 
     const fetchData = async () => {
         try {
-            const result = await axios.get("http://127.0.0.1:8000/api/categories");
+            const result = await axios.get("http://127.0.0.1:8081/api/categories");
             setCatgData(result.data.results);
         } catch (err) {
             console.log("Something went wrong", err);
@@ -33,7 +33,7 @@ function Categories() {
 
     // const handleDelete = async (id) => {
     //     try {
-    //         await axios.delete(`http://127.0.0.1:8000/api/categoriedelete/${id}`);
+    //         await axios.delete(`http://127.0.0.1:8080/api/categoriedelete/${id}`);
     //         setCatgData(catgData.filter(item => item.id !== id));
     //     } catch (err) {
     //         console.log("Something went wrong", err);
@@ -42,7 +42,7 @@ function Categories() {
 
     const handleDelete = async(id) => {
         console.log(id);
-        await axios.delete("http://127.0.0.1:8000/api/categoriedelete/"+id);
+        await axios.delete("http://127.0.0.1:8081/api/categoriedelete/"+id);
         const newCatgData=catgData.filter((item)=>{
             return(
                 item.id !==id
@@ -71,7 +71,7 @@ function Categories() {
                                 <td className='py-4 px-6 border-b'>
                                     <img 
                                         className="w-24 h-24 rounded-full mx-auto" 
-                                        src={`http://127.0.0.1:8000/storage/${category.image}`} 
+                                        src={`http://127.0.0.1:8081/storage/${category.image}`} 
                                         alt="" 
                                     />
                                 </td>

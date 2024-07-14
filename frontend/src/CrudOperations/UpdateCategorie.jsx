@@ -41,7 +41,7 @@ function UpdateCategorie({ onClose, category }) {
         
       try {
         await axios.put
-        (`http://127.0.0.1:8000/api/categoriesupdate/${category.id}`,formData);
+        (`http://127.0.0.1:8081/api/categoriesupdate/${category.id}`,formData);
         navigate('/categories');
         
         } catch (err) {

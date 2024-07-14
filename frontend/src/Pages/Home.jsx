@@ -121,7 +121,7 @@ function Home() {
 
     const fetchStatistics = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/statistics');
+            const response = await axios.get('http://127.0.0.1:8081/api/statistics');
             setStatistics(response.data);
         } catch (error) {
             console.error("There was an error fetching the statistics!", error);
@@ -130,7 +130,7 @@ function Home() {
 
     const fetchCategories = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/categories');
+            const response = await axios.get('http://127.0.0.1:8081/api/categories');
             setCategories(response.data.results);
         } catch (error) {
             console.error("There was an error fetching the categories!", error);
@@ -139,7 +139,7 @@ function Home() {
 
     const fetchCategoryAccessoriesCount = async (id) => {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/categoryaccessories/${id}`);
+            const response = await axios.get(`http://127.0.0.1:8081/api/categoryaccessories/${id}`);
             setCategoryAccessoriesCount(response.data.accessoriesCount);
         } catch (error) {
             console.error("There was an error fetching the accessories count for the selected category!", error);

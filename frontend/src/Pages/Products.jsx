@@ -168,7 +168,7 @@ function Products() {
 
     const fetchData = async () => {
         try {
-            const result = await axios.get("http://127.0.0.1:8000/api/produits");
+            const result = await axios.get("http://127.0.0.1:8081/api/produits");
             setProductData(result.data.products); // Use the correct key from the response
         } catch (err) {
             console.log("Something went wrong", err);
@@ -177,7 +177,7 @@ function Products() {
 
     const fetchCategories = async () => {
         try {
-            const result = await axios.get("http://127.0.0.1:8000/api/categories");
+            const result = await axios.get("http://127.0.0.1:8081/api/categories");
             setCategories(result.data.results); // Assuming your API returns categories in `results`
         } catch (err) {
             console.log("Something went wrong", err);
@@ -186,7 +186,7 @@ function Products() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete("http://127.0.0.1:8000/api/produitsdelete/" + id);
+            await axios.delete("http://127.0.0.1:8081/api/produitsdelete/" + id);
             const newProductData = productData.filter((item) => item.id !== id);
             setProductData(newProductData);
         } catch (err) {
@@ -235,7 +235,7 @@ function Products() {
                                 <td className='py-4 px-6 border-b'>
                                     <img
                                         className="w-24 h-24 rounded-lg mx-auto"
-                                        src={`http://127.0.0.1:8000/storage/${product.image}`}
+                                        src={`http://127.0.0.1:8081/storage/${product.image}`}
                                         alt=""
                                     />
                                 </td>

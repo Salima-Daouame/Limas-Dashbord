@@ -19,7 +19,7 @@ function AddProduct({ onClose }) {
 
     const fetchCategories = async () => {
         try {
-            const result = await axios.get("http://127.0.0.1:8000/api/categories");
+            const result = await axios.get("http://127.0.0.1:8081/api/categories");
             setCategories(result.data.results);
         } catch (err) {
             console.log("Something went wrong", err);
@@ -56,7 +56,7 @@ function AddProduct({ onClose }) {
         formData.append('categorie_id', userField.categorie_id);
 
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/addproduit", formData, {
+            const response = await axios.post("http://127.0.0.1:8081/api/addproduit", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
